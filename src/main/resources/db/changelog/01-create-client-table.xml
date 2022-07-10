@@ -3,7 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-    <changeSet id="14" author="Baki">
+    <changeSet id="15" author="Baki">
 
         <dropTable tableName="measurement" />
         <dropTable tableName="client" />
@@ -16,20 +16,21 @@
                 <constraints nullable="false" unique="true"/>
             </column>
             <column name="street_name" type="varchar(50)">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
             <column name="city" type="varchar(50)">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
             <column name="post_code" type="integer">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
             <column name="meter_id" type="varchar(50)">
                 <constraints nullable="false" unique="true"/>
             </column>
         </createTable>
 
-        <addUniqueConstraint  tableName="client" columnNames="street_name, city, post_code"/>
+        <addUniqueConstraint  tableName="client" columnNames="name, street_name, city, post_code"/>
+        <addUniqueConstraint tableName="client" columnNames="name, meter_id" />
 
         <createTable tableName="measurement">
             <column name="id" type="serial">
