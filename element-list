@@ -1,0 +1,7 @@
+com.typeqast.typeqastmeterapi
+com.typeqast.typeqastmeterapi.controller
+com.typeqast.typeqastmeterapi.model
+com.typeqast.typeqastmeterapi.repository
+com.typeqast.typeqastmeterapi.repository.impl
+com.typeqast.typeqastmeterapi.service
+com.typeqast.typeqastmeterapi.util
