@@ -1,0 +1,16 @@
+server:
+  port: 9042
+
+spring:
+  # Postgres
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: admin
+    password: 0000
+  liquibase:
+    change-log: classpath:db/liquibase-changelog.xml
+    default-schema: public
+    enabled: true
+    drop-first: false
+    password: 0000
+    user: admin

@@ -1,0 +1,130 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="13" author="Baki">
+
+        <sql>
+--Ivan
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Jan-2020'), 10);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Feb-2020'), 213);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Mar-2020'), 54);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Apr-2020'), 312);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-May-2020'), 238);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Jun-2020'), 211);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Jul-2020'), 38);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Aug-2020'), 97);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Sep-2020'), 368);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Oct-2020'), 12);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Nov-2020'), 56);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Dec-2020'), 400);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Feb-2021'), 13);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Mar-2021'), 254);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Apr-2021'), 212);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Jun-2021'), 411);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Jul-2021'), 8);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Aug-2021'), 197);
+
+--Silva
+
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Jan-2020'), 754);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Feb-2020'), 222);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Mar-2020'), 565);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Apr-2020'), 321);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-May-2020'), 238);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Jun-2020'), 234);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Jul-2020'), 11);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Aug-2020'), 97);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Sep-2020'), 234);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Oct-2020'), 654);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Nov-2020'), 53);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Dec-2020'), 399);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Jan-2019'), 854);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Feb-2019'), 22);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Mar-2019'), 65);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Jun-2021'), 24);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Jul-2021'), 181);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('02347191-1618-4147-ae53-505ac24a2316', DATE('10-Aug-2021'), 987);
+
+--Marko
+
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('36b414c1-e475-4e92-8772-1d0fe118b9df', DATE('10-Jan-2020'), 100);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('36b414c1-e475-4e92-8772-1d0fe118b9df', DATE('10-Feb-2020'), 21);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('36b414c1-e475-4e92-8772-1d0fe118b9df', DATE('10-Mar-2020'), 5);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('36b414c1-e475-4e92-8772-1d0fe118b9df', DATE('10-Apr-2020'), 354);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('36b414c1-e475-4e92-8772-1d0fe118b9df', DATE('10-May-2020'), 267);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('36b414c1-e475-4e92-8772-1d0fe118b9df', DATE('10-Jun-2020'), 229);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('36b414c1-e475-4e92-8772-1d0fe118b9df', DATE('10-Jul-2020'), 654);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('36b414c1-e475-4e92-8772-1d0fe118b9df', DATE('10-Aug-2020'), 345);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('36b414c1-e475-4e92-8772-1d0fe118b9df', DATE('10-Sep-2020'), 879);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('36b414c1-e475-4e92-8772-1d0fe118b9df', DATE('10-Oct-2020'), 456);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('36b414c1-e475-4e92-8772-1d0fe118b9df', DATE('10-Nov-2020'), 11);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('36b414c1-e475-4e92-8772-1d0fe118b9df', DATE('10-Dec-2020'), 55);
+
+--Nina
+
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Jan-2020'), 210);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Feb-2020'), 713);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Mar-2020'), 434);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Apr-2020'), 612);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-May-2020'), 438);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Jun-2020'), 11);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Jul-2020'), 448);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Aug-2020'), 667);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Sep-2020'), 68);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Oct-2020'), 542);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Nov-2020'), 76);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Dec-2020'), 200);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Jan-2021'), 34);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Feb-2021'), 191);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Aug-2021'), 87);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Jun-2021'), 24);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Jul-2021'), 991);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('623e03e5-00b5-43a1-8c03-e42cb47bfb1c', DATE('10-Dec-2021'), 667);
+
+--Nika
+
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Jan-2020'), 980);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Feb-2020'), 13);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Mar-2020'), 4);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Apr-2020'), 512);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-May-2020'), 538);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Jun-2020'), 511);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Jul-2020'), 8);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Aug-2020'), 297);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Sep-2020'), 368);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Oct-2020'), 42);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Nov-2020'), 66);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Dec-2020'), 400);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-May-2021'), 38);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Jun-2021'), 11);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Jul-2021'), 888);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Aug-2021'), 27);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Sep-2021'), 68);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('77287873-cfb7-4014-bb59-072fd1fd6ff4', DATE('10-Oct-2021'), 482);
+
+--Baki
+
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Jan-2020'), 13);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Feb-2020'), 22);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Mar-2020'), 567);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Apr-2020'), 33);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-May-2020'), 28);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Jun-2020'), 11);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Jul-2020'), 538);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Aug-2020'), 47);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Sep-2020'), 68);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Oct-2020'), 142);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Nov-2020'), 564);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Dec-2020'), 4);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Jul-2021'), 38);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Aug-2021'), 777);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Sep-2021'), 678);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Oct-2021'), 42);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Nov-2021'), 54);
+            INSERT INTO Measurement (meter_id, time, value) VALUES ('23490bf0-cf1c-4a49-a8d5-241313af897b', DATE('10-Dec-2021'), 433);
+        </sql>
+
+    </changeSet>
+</databaseChangeLog>

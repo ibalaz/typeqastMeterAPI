@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  app:
+    image: 'docker-spring-boot-postgres:latest'
+    build:
+      context: .
+    container_name: app
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=0000
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: 'postgres:13.1-alpine'
+    container_name: db
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=0000
+
+  liquibase:
+    image: liquibase/liquibase:4.9.1
+    container_name: Liquibase_container
+    depends_on:
+      PostgreSQL:
+        condition: service_healthy
+  volumes:
+    - /db
+  command: --defaults-file=/liquibase/changelog/liquibase.properties update
