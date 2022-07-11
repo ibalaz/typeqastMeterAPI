@@ -217,10 +217,7 @@ public class MeasurementController {
     if (command.getDate() != null) {
       date = LocalDate.parse(command.getDate(), dtf);
     } else {
-      ServiceResult result = new ServiceResult();
-      result.success = false;
-      result.errorMessageList = List.of("Please provide date for which record is updated");
-      return result;
+      return ServiceResult.buildErrorResult(List.of("Please provide date for which record is updated"));
     }
     return measurementService.updateMeasurement(command.getClientName(), date, command.getValue());
   }

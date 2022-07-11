@@ -23,16 +23,12 @@ public class ClientService {
    * @return the all clients
    */
   public ServiceResult getAllClients() {
-    ServiceResult result = new ServiceResult();
     try {
-      result.result = clientRepository.getAllClients();
-      result.success = true;
+      return ServiceResult.buildValidResult(clientRepository.getAllClients());
     } catch (Exception e) {
       log.error("Error getting all clients " + e);
-      result.success = false;
-      result.errorMessageList = List.of("Error getting all clients " + e);
+      return ServiceResult.buildErrorResult(List.of("Error getting all clients " + e));
     }
-    return result;
   }
 
   /**
@@ -41,15 +37,11 @@ public class ClientService {
    * @return the all clients details
    */
   public ServiceResult getAllClientsDetails() {
-    ServiceResult result = new ServiceResult();
     try {
-      result.result = clientRepository.getAllClientsDetails();
-      result.success = true;
+      return ServiceResult.buildValidResult(clientRepository.getAllClientsDetails());
     } catch (Exception e) {
       log.error("Error getting all clients details " + e);
-      result.success = false;
-      result.errorMessageList = List.of("Error getting all clients details " + e);
+      return ServiceResult.buildErrorResult(List.of("Error getting all clients details " + e));
     }
-    return result;
   }
 }

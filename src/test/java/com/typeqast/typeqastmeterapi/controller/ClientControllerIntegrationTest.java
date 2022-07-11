@@ -29,9 +29,7 @@ class ClientControllerIntegrationTest {
 
   @BeforeEach
   void setUp() {
-    ServiceResult result = new ServiceResult();
-    result.success = true;
-    when(clientService.getAllClients()).thenReturn(result);
+    when(clientService.getAllClients()).thenReturn(ServiceResult.buildValidResult("Success"));
   }
 
   @Test
@@ -41,7 +39,7 @@ class ClientControllerIntegrationTest {
         .andDo(print())
         .andExpect(status().isOk())
         .andExpect(content()
-            .json("{\"success\":true,\"errorMessageList\":null,\"result\":null}"));
+            .json("{\"success\":true,\"errorMessages\":[],\"result\":\"Success\"}"));
     verify(clientService).getAllClients();
   }
 }

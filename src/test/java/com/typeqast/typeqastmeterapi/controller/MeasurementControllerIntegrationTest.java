@@ -32,15 +32,16 @@ class MeasurementControllerIntegrationTest {
 
   @BeforeEach
   void setUp() {
-    ServiceResult result = new ServiceResult();
-    result.success = true;
-    when(measurementService.getMonthlyMeasurement("Ivan", 2020, 1)).thenReturn(result);
-    when(measurementService.getMeasurementsForClient("Ivan")).thenReturn(result);
-    when(measurementService.getAggregateReadingYear("Ivan", 2020)).thenReturn(result);
-    when(measurementService.getReportPerMonth("Ivan", 2020)).thenReturn(result);
-    when(measurementService.addNewMeasurement("Ivan", LocalDate.parse("10-07-2022", DateTimeFormatter.ofPattern("dd-MM-yyyy")), 10)).thenReturn(result);
-    when(measurementService.removeMeasurement("Ivan", LocalDate.parse("10-07-2022", DateTimeFormatter.ofPattern("dd-MM-yyyy")))).thenReturn(result);
-    when(measurementService.updateMeasurement("Ivan", LocalDate.parse("10-07-2022", DateTimeFormatter.ofPattern("dd-MM-yyyy")), 20)).thenReturn(result);
+    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    String date = dateFormat.format(LocalDate.now());
+
+    when(measurementService.getMonthlyMeasurement("Ivan", 2020, 1)).thenReturn(ServiceResult.buildValidResult("Success"));
+    when(measurementService.getMeasurementsForClient("Ivan")).thenReturn(ServiceResult.buildValidResult("Success"));
+    when(measurementService.getAggregateReadingYear("Ivan", 2020)).thenReturn(ServiceResult.buildValidResult("Success"));
+    when(measurementService.getReportPerMonth("Ivan", 2020)).thenReturn(ServiceResult.buildValidResult("Success"));
+    when(measurementService.addNewMeasurement("Ivan", LocalDate.parse(date, dateFormat), 10)).thenReturn(ServiceResult.buildValidResult("Success"));
+    when(measurementService.removeMeasurement("Ivan", LocalDate.parse(date, dateFormat))).thenReturn(ServiceResult.buildValidResult("Success"));
+    when(measurementService.updateMeasurement("Ivan", LocalDate.parse(date, dateFormat), 20)).thenReturn(ServiceResult.buildValidResult("Success"));
   }
 
   @Test
@@ -49,7 +50,7 @@ class MeasurementControllerIntegrationTest {
         .andDo(print())
         .andExpect(status().isOk())
         .andExpect(content()
-            .json("{\"success\":true,\"errorMessageList\":null,\"result\":null}"));
+            .json("{\"success\":true,\"errorMessages\":[],\"result\":\"Success\"}"));
     verify(measurementService).getMeasurementsForClient("Ivan");
   }
 
@@ -59,7 +60,7 @@ class MeasurementControllerIntegrationTest {
         .andDo(print())
         .andExpect(status().isOk())
         .andExpect(content()
-            .json("{\"success\":true,\"errorMessageList\":null,\"result\":null}"));
+            .json("{\"success\":true,\"errorMessages\":[],\"result\":\"Success\"}"));
     verify(measurementService).getAggregateReadingYear("Ivan", 2020);
   }
 
@@ -69,7 +70,7 @@ class MeasurementControllerIntegrationTest {
         .andDo(print())
         .andExpect(status().isOk())
         .andExpect(content()
-            .json("{\"success\":true,\"errorMessageList\":null,\"result\":null}"));
+            .json("{\"success\":true,\"errorMessages\":[],\"result\":\"Success\"}"));
     verify(measurementService).getReportPerMonth("Ivan", 2020);
   }
 
@@ -79,12 +80,15 @@ class MeasurementControllerIntegrationTest {
         .andDo(print())
         .andExpect(status().isOk())
         .andExpect(content()
-            .json("{ \"success\":true,\"errorMessageList\":null,\"result\":null }"));
+            .json("{ \"success\":true,\"errorMessages\":[],\"result\":\"Success\" }"));
     verify(measurementService).getMonthlyMeasurement("Ivan", 2020, 1);
   }
 
   @Test
   void itShouldAddNewMeasurement() throws Exception {
+    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    String date = dateFormat.format(LocalDate.now());
+
     mockMvc.perform(MockMvcRequestBuilders.post("/measurement/addNew")
             .contentType(MediaType.APPLICATION_JSON)
             .accept(MediaType.APPLICATION_JSON)
@@ -92,30 +96,36 @@ class MeasurementControllerIntegrationTest {
         .andDo(print())
         .andExpect(status().isOk())
         .andExpect(content()
-            .json("{\"success\":true,\"errorMessageList\":null,\"result\":null}"));
-    verify(measurementService).addNewMeasurement("Ivan", LocalDate.parse("10-07-2022", DateTimeFormatter.ofPattern("dd-MM-yyyy")), 10);
+            .json("{\"success\":true,\"errorMessages\":[],\"result\":\"Success\"}"));
+    verify(measurementService).addNewMeasurement("Ivan", LocalDate.parse(date, dateFormat), 10);
 
   }
 
   @Test
   void itShouldRemoveMeasurement() throws Exception {
-    mockMvc.perform(MockMvcRequestBuilders.post("/measurement/remove?clientName=Ivan&date=10-07-2022"))
+    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    String date = dateFormat.format(LocalDate.now());
+
+    mockMvc.perform(MockMvcRequestBuilders.post("/measurement/remove?clientName=Ivan&date=" + date))
         .andExpect(status().isOk())
         .andExpect(content()
-            .json("{\"success\":true,\"errorMessageList\":null,\"result\":null}"));
-    verify(measurementService).removeMeasurement("Ivan", LocalDate.parse("10-07-2022", DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+            .json("{\"success\":true,\"errorMessages\":[],\"result\":\"Success\"}"));
+    verify(measurementService).removeMeasurement("Ivan",LocalDate.parse(date, dateFormat));
   }
 
   @Test
   void itShouldUpdateMeasurement() throws Exception {
+    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    String date = dateFormat.format(LocalDate.now());
+
     mockMvc.perform(MockMvcRequestBuilders.post("/measurement/update")
             .contentType(MediaType.APPLICATION_JSON)
             .accept(MediaType.APPLICATION_JSON)
-            .content("{\"clientName\":\"Ivan\", \"value\": 20, \"date\":\"10-07-2022\"}"))
+            .content("{\"clientName\":\"Ivan\", \"value\": 20, \"date\":\""+ date + "\"}"))
         .andDo(print())
         .andExpect(status().isOk())
         .andExpect(content()
-            .json("{\"success\": true, \"errorMessageList\": null, \"result\": null}"));
-    verify(measurementService).updateMeasurement("Ivan", LocalDate.parse("10-07-2022", DateTimeFormatter.ofPattern("dd-MM-yyyy")), 20);
+            .json("{\"success\": true, \"errorMessages\": [], \"result\": \"Success\"}"));
+    verify(measurementService).updateMeasurement("Ivan", LocalDate.parse(date, dateFormat), 20);
   }
 }

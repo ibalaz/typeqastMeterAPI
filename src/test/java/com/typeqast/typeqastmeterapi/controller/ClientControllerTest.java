@@ -19,9 +19,7 @@ class ClientControllerTest {
 
   @BeforeEach
   void setUp() {
-    ServiceResult serviceResult = new ServiceResult();
-    serviceResult.success = true;
-    when(clientService.getAllClients()).thenReturn(serviceResult);
+    when(clientService.getAllClients()).thenReturn(ServiceResult.buildValidResult("Success"));
   }
 
   @Test

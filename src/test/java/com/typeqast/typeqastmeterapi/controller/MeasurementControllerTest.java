@@ -20,15 +20,16 @@ class MeasurementControllerTest {
 
   @BeforeEach
   void setUp() {
-    ServiceResult serviceResult = new ServiceResult();
-    serviceResult.success = true;
-    when(measurementService.getMonthlyMeasurement("Ivan", 2020, 1)).thenReturn(serviceResult);
-    when(measurementService.getMeasurementsForClient("Ivan")).thenReturn(serviceResult);
-    when(measurementService.getAggregateReadingYear("Ivan", 2020)).thenReturn(serviceResult);
-    when(measurementService.getReportPerMonth("Ivan", 2020)).thenReturn(serviceResult);
-    when(measurementService.addNewMeasurement("Ivan", LocalDate.parse("10-07-2022", DateTimeFormatter.ofPattern("dd-MM-yyyy")), 10)).thenReturn(serviceResult);
-    when(measurementService.removeMeasurement("Ivan", LocalDate.parse("10-07-2022", DateTimeFormatter.ofPattern("dd-MM-yyyy")))).thenReturn(serviceResult);
-    when(measurementService.updateMeasurement("Ivan", LocalDate.parse("10-07-2022", DateTimeFormatter.ofPattern("dd-MM-yyyy")), 20)).thenReturn(serviceResult);
+    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    String date = dateFormat.format(LocalDate.now());
+
+    when(measurementService.getMonthlyMeasurement("Ivan", 2020, 1)).thenReturn(ServiceResult.buildValidResult("Success"));
+    when(measurementService.getMeasurementsForClient("Ivan")).thenReturn(ServiceResult.buildValidResult("Success"));
+    when(measurementService.getAggregateReadingYear("Ivan", 2020)).thenReturn(ServiceResult.buildValidResult("Success"));
+    when(measurementService.getReportPerMonth("Ivan", 2020)).thenReturn(ServiceResult.buildValidResult("Success"));
+    when(measurementService.addNewMeasurement("Ivan", LocalDate.parse(date, dateFormat), 10)).thenReturn(ServiceResult.buildValidResult("Success"));
+    when(measurementService.removeMeasurement("Ivan", LocalDate.parse(date, dateFormat))).thenReturn(ServiceResult.buildValidResult("Success"));
+    when(measurementService.updateMeasurement("Ivan", LocalDate.parse(date, dateFormat), 20)).thenReturn(ServiceResult.buildValidResult("Success"));
   }
 
   @Test
@@ -84,7 +85,9 @@ class MeasurementControllerTest {
   @Test
   void itShouldRemoveMeasurement() {
     // when
-    ServiceResult result = underTest.removeMeasurement("Ivan", "10-07-2022");
+    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    String date = dateFormat.format(LocalDate.now());
+    ServiceResult result = underTest.removeMeasurement("Ivan", date);
 
     // then
     assertThat(result).isNotNull();
@@ -94,7 +97,9 @@ class MeasurementControllerTest {
   @Test
   void itShouldUpdateMeasurement() {
     // when
-    ServiceResult result = underTest.updateMeasurement(new MeasurementCommand("Ivan",20, "10-07-2022"));
+    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    String date = dateFormat.format(LocalDate.now());
+    ServiceResult result = underTest.updateMeasurement(new MeasurementCommand("Ivan",20, date));
 
     // then
     assertThat(result).isNotNull();

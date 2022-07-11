@@ -31,7 +31,7 @@ public class ClientController {
   /**
    * Gets all client names.
    *
-   * @return {List<String>} all client names
+   * @return {List} list of all client names
    */
   @Operation(summary = "This endpoint gets all client names")
   @ApiResponses(value = {
@@ -55,7 +55,7 @@ public class ClientController {
   /**
    * Gets all clients details.
    *
-   * @return {List<Client>} the all clients details
+   * @return {List} list of all clients details
    */
   @Operation(summary = "This endpoint gets all client details")
   @ApiResponses(value = {
@@ -73,6 +73,6 @@ public class ClientController {
   @GetMapping("/getAllDetails")
   public ServiceResult getAllClientsDetails() {
     log.info("Calling getAllClientsDetails");
-    return  clientService.getAllClientsDetails();
+    return clientService.getAllClientsDetails();
   }
 }
