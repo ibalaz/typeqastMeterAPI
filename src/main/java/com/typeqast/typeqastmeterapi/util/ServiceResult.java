@@ -23,17 +23,38 @@ public class ServiceResult {
     }
   }
 
+  /**
+   * Valid ServiceResult builder, for positive responses.
+   *
+   * @param result {Object} - data object with response from database or message
+   * @return {ServiceResult} - positive ServiceResult status
+   */
   public static ServiceResult buildValidResult(Object result) {
     return new ServiceResult(result, null);
   }
 
+  /**
+   * Error ServiceResult builder, for error handling.
+   *
+   * @param errorMessages {List} - list of error messages and exceptions
+   * @return {ServiceResult} - error ServiceResult status
+   */
   public static ServiceResult buildErrorResult(List<String> errorMessages) {
     return new ServiceResult(null, errorMessages);
   }
 
+  /**
+   * Success status.
+   */
   public boolean success;
 
+  /**
+   * List of error messages.
+   */
   public List<String> errorMessages;
 
+  /**
+   * Object with results
+   */
   public Object result;
 }
