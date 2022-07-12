@@ -3,10 +3,10 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-    <changeSet id="13" author="Baki">
+    <changeSet id="14" author="Baki">
 
         <sql>
---Ivan
+            --Ivan
             INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Jan-2020'), 10);
             INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Feb-2020'), 213);
             INSERT INTO Measurement (meter_id, time, value) VALUES ('d0a48f87-1be7-40db-a57f-eaff20637791', DATE('10-Mar-2020'), 54);

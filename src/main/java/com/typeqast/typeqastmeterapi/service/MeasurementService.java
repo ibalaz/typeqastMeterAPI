@@ -96,7 +96,12 @@ public class MeasurementService {
    */
   public ServiceResult addNewMeasurement(String clientName, LocalDate date, int value) {
     try {
-      return ServiceResult.buildValidResult(measurementRepository.addNewMeasurement(clientName, date, value));
+      int rowsAdded = measurementRepository.addNewMeasurement(clientName, date, value);
+      if (rowsAdded == 1 ) {
+        return ServiceResult.buildValidResult("Successful adding of new measurement");
+      } else {
+        return ServiceResult.buildErrorResult(List.of("Something was wrong in adding new measurement, contact your admin!"));
+      }
     } catch (DuplicateKeyException e) {
       log.error("Error adding new measurement, measurement for that date already exists.");
       return ServiceResult.buildErrorResult(List.of("Error adding new measurement, measurement for that date already exists."));

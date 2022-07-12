@@ -3,7 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-    <changeSet id="14" author="Baki">
+    <changeSet id="15" author="Baki">
 
         <sql>
             INSERT INTO Client (name, street_name, city, post_code, meter_id) values ('Ivan', 'Hrvatske Republike 1', 'Antunovac', 31216, 'd0a48f87-1be7-40db-a57f-eaff20637791');
@@ -11,7 +11,7 @@
             INSERT INTO Client (name, street_name, city, post_code, meter_id) values ('Marko', 'Zavrtnica 17', 'Zagreb', 10000, '36b414c1-e475-4e92-8772-1d0fe118b9df');
             INSERT INTO Client (name, street_name, city, post_code, meter_id) values ('Nina', 'Strmečkog put 15', 'Antunovac', 31216, '623e03e5-00b5-43a1-8c03-e42cb47bfb1c');
             INSERT INTO Client (name, street_name, city, post_code, meter_id) values ('Nika', 'Dubrovačka 3', 'Antunovac', 31216, '77287873-cfb7-4014-bb59-072fd1fd6ff4');
-            INSERT INTO Client (name, street_name, city, post_code, meter_id) values ('Baki', 'Hrvatske Republike 1', 'Osijek', 31000, '23490bf0-cf1c-4a49-a8d5-241313af897b');
+            INSERT INTO Client (name, street_name, city, post_code, meter_id) values ('Snježa', 'Hrvatske Republike 1', 'Osijek', 31000, '23490bf0-cf1c-4a49-a8d5-241313af897b');
         </sql>
     </changeSet>
 </databaseChangeLog>

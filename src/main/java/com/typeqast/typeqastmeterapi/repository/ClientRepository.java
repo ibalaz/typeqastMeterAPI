@@ -31,19 +31,19 @@ public interface ClientRepository {
   String getClientsMeterId(String client);
 
   /**
-   * Save client int.
+   * Add new client.
    *
    * @param client the client
    * @return the int
    */
-  int saveClient(Client client);
+  int addClient(Client client);
 
   /**
-   * Update clients meter int.
+   * Update clients meter id.
    *
-   * @param client   the client
-   * @param newMeter the new meter
+   * @param clientName the client name
+   * @param newMeter   the new meter
    * @return the int
    */
-  int updateClientsMeter(Client client, String newMeter);
+  int updateClientsMeter(String clientName, String newMeter);
 }

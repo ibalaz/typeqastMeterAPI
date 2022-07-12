@@ -31,9 +31,8 @@ public class JdbcClientRepository implements ClientRepository {
 
   private static final String GET_CLIENT_NAMES = String.format("SELECT %s FROM client", NAME);
   private static final String GET_CLIENT_DETAILS = "SELECT * FROM client";
-  private static final String GET_CLIENT_METER_ID = String.format("SELECT %s FROM client WHERE %s= ", METER_ID, NAME);
-
-  private static final String POST_NEW_CLIENT = String.format("INSERT INTO client (%s, %s, %s, %s, %s) VALUES (?, ?, ?, ?, ?)", NAME, STREET_NAME, CITY, POST_CODE, METER_ID);
+  private static final String GET_CLIENT_METER_ID = String.format("SELECT %s FROM client WHERE %s= ?", METER_ID, NAME);
+  private static final String INSERT_NEW_CLIENT = String.format("INSERT INTO client (%s, %s, %s, %s, %s) VALUES (?, ?, ?, ?, ?)", NAME, STREET_NAME, CITY, POST_CODE, METER_ID);
   private static final String UPDATE_CLIENT = String.format("UPDATE client SET %s = ? WHERE %s = ?", METER_ID, NAME);
 
 
@@ -66,12 +65,12 @@ public class JdbcClientRepository implements ClientRepository {
 
   @Override
   public String getClientsMeterId(String client) {
-    return jdbcTemplate.queryForObject(GET_CLIENT_METER_ID + client, String.class);
+    return jdbcTemplate.queryForObject(GET_CLIENT_METER_ID, String.class, client);
   }
 
   @Override
-  public int saveClient(Client client) {
-    return jdbcTemplate.update(POST_NEW_CLIENT,
+  public int addClient(Client client) {
+    return jdbcTemplate.update(INSERT_NEW_CLIENT,
         client.getName(),
         client.getStreetName(),
         client.getCity(),
@@ -80,7 +79,7 @@ public class JdbcClientRepository implements ClientRepository {
   }
 
   @Override
-  public int updateClientsMeter(Client client, String newMeter) {
-    return jdbcTemplate.update(UPDATE_CLIENT, newMeter, client.getName());
+  public int updateClientsMeter(String clientName, String newMeter) {
+    return jdbcTemplate.update(UPDATE_CLIENT, newMeter, clientName);
   }
 }
