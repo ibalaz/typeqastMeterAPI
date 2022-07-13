@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.typeqast</groupId>
-	<artifactId>TypeqastMeterAPI</artifactId>
+	<artifactId>typeqast-meter-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>TypeqastMeterAPI</name>
+	<name>typeqast-meter-api</name>
 	<description>TypeqastMeterAPI</description>
 	<properties>
 		<java.version>18</java.version>

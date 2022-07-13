@@ -1,5 +1,8 @@
-FROM openjdk:18.0.1.1
-WORKDIR /app
-COPY TypeqastMeterAPI*.jar /app
+FROM docker-spring-boot-postgres:latest
 EXPOSE 9042
-CMD ["java", "-jar", "TypeqastMeterAPI-0.0.1-SNAPSHOT.jar"]
+WORKDIR /app
+ARG JAR_FILE=typeqast-meter-api-0.0.1-SNAPSHOT.jar
+ADD ${JAR_FILE} app.jar
+COPY typeqast-meter-api-0.0.1-SNAPSHOT.jar /app
+ENTRYPOINT ["java","-jar","typeqast-meter-api-0.0.1-SNAPSHOT.jar"]
+RUN ls -la

@@ -3,7 +3,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-    <changeSet id="17" author="Baki">
+    <changeSet id="19" author="Baki">
 
         <dropTable tableName="measurement" />
         <dropTable tableName="client" />
@@ -48,5 +48,6 @@
         </createTable>
 
         <addUniqueConstraint tableName="measurement" columnNames="meter_id, time"  />
+
     </changeSet>
 </databaseChangeLog>

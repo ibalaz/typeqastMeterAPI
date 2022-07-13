@@ -19,6 +19,18 @@ Postman collection for testing: https://pastebin.com/BnAPuAZ8
 
 To access swagger, after locally running program use link: http://localhost:9042/swagger-ui/index.html
 
+## Docker
+
+To run docker-compose first you need to build jar file via: <br>
+<code>mvn clean spring-boot:build-image -DskipTests=true</code>
+
+After that manually copy jar file from target folder to root folder of app. (something was bugged in dockerfile and couldn't find my jar file)
+
+And lastly in terminal run commands:<br>
+<code>docker-compose build <br>
+docker-compose up
+</code>
+
 ## Documentation and GitHub pages
 JavaDoc published on: https://ibalaz.github.io/typeqastMeterAPI/
 

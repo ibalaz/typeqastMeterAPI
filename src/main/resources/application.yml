@@ -13,5 +13,5 @@ spring:
     default-schema: public
     enabled: true
     drop-first: false
-    password: 0000
+    password: secret
     user: admin
